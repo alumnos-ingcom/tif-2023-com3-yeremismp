@@ -1,3 +1,4 @@
+"""Calculadora de fracciones"""
 def simplificar_fraccion(num, den):
     def calcular_mcd(a, b):
         while b != 0:
@@ -14,8 +15,8 @@ def sumar_fracciones(num1, den1, num2, den2):
     num = (num1 * den2) + (num2 * den1)
     den = den1 * den2
     return simplificar_fraccion(num, den)
- 
-def restar_fracciones(num1, den1, num2, den2): 
+
+def restar_fracciones(num1, den1, num2, den2):
     num = (num1 * den2) - (num2 * den1)
     den = den1 * den2
     return simplificar_fraccion(num, den)
@@ -30,8 +31,8 @@ def dividir_fracciones(num1, den1, num2, den2):
     den = den1 * num2
     return simplificar_fraccion(num, den)
 
-def solo_float(entrada):
-    while (entrada):
+def solo_int(entrada):
+    while (entrada): 
         try:
             numero = int(entrada)
         except:
@@ -43,16 +44,16 @@ def solo_float(entrada):
 
 # Solicitamos los valores de la primer fraccion
 num1 = input("Ingrese el numerador del primer valor: ")
+num1 = solo_int(num1)
 den1 = input("Ingrese el denominador del primer valor: ")
-num1 = solo_float(num1)
-den1 = solo_float(den1)
+den1 = solo_int(den1)
 
 salida = False
 while salida is False:
     #Solicitamos operador
     operador = input("Ingrese el operador (+, -, *, /) o '=' para obtener el resultado: \n")
-    
-    
+
+
     if operador == "=":
         salida = True
     else:
@@ -60,27 +61,27 @@ while salida is False:
         if operador == '+':
              #Solicitamos los valores de la segunda fraccion 
             num2 = input("Ingrese el numerador del segundo valor: ")
+            num2 = solo_int(num2)
             den2 = input("Ingrese el denominador del segundo valor: ")
-            num2 = solo_float(num2)
-            den2 = solo_float(den2)
+            den2 = solo_int(den2)
             resultado = sumar_fracciones(num1, den1, num2, den2)
         elif operador == '-':
             num2 = input("Ingrese el numerador del segundo valor: ")
+            num2 = solo_int(num2)
             den2 = input("Ingrese el denominador del segundo valor: ")
-            num2 = solo_float(num1)
-            den2 = solo_float(den2)
+            den2 = solo_int(den2)
             resultado = restar_fracciones(num1, den1, num2, den2)
         elif operador == '*':
             num2 = input("Ingrese el numerador del segundo valor: ")
+            num2 = solo_int(num2)
             den2 = input("Ingrese el denominador del segundo valor: ")
-            num2 = solo_float(num2)
-            den2 = solo_float(den2)
+            den2 = solo_int(den2)
             resultado = multiplicar_fracciones(num1, den1, num2, den2)
         elif operador == '/':
             num2 = input("Ingrese el numerador del segundo valor: ")
+            num2 = solo_int(num2)
             den2 = input("Ingrese el denominador del segundo valor: ")
-            num2 = solo_float(num2)
-            den2 = solo_float(den2)
+            den2 = solo_int(den2)
             resultado = dividir_fracciones(num1, den1, num2, den2)
         else:
             print("Operador inválido.")
