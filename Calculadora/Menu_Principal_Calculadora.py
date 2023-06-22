@@ -34,7 +34,7 @@ while salida is False:
         """codigo a ejucutar si el usuario selecciona calculadora de fracciones
         Usaremos el comando import"""
         print ("Calculadora de Fracciones\n")
-        import Calculadora_Fracciones
+        import Calculadora_fracciones 
         
     elif opcion == 3:
         """codigo a ejecutar si el usuario selecciona calculadora de conversion
